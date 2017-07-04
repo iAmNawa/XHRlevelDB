@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <style>
+      .getit{
+        background-color: blue;
+        height:40px;
+        width:30px;
+      }
+
+    </style>
+
+    <h1>my page was sent</h1>
+
+    <input type='text'/>
+
+    <button type="button" name="input">store it</button>
+
+
+    <div class='getit'>
+
+    </div>
+
+    <script>
+
+
+      document
+        .querySelector('button')
+        .addEventListener('click', function(e){
+
+          var val = document
+            .querySelector('input')
+            .value
+
+            function reqListener () {
+              console.log(this.responseText)
+            }
+
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", reqListener);
+            oReq.open("GET", "/store/"+val);
+            oReq.send();
+
+        })
+
+
+      document
+        .querySelector('.getit')
+        .addEventListener('click', function(e){
+          function reqListener () {
+
+            console.log(this.responseText)
+          }
+
+          var oReq = new XMLHttpRequest();
+          oReq.addEventListener("load", reqListener);
+          oReq.open("GET", "/data");
+          oReq.send();
+        }, false)
+
+    </script>
+  </body>
+</html>

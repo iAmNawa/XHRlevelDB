@@ -1,0 +1,7 @@
+{
+  "name": "meta",
+  "dependencies": {
+    "express": "^4.15.3",
+    "level": "^1.7.0"
+  }
+}
